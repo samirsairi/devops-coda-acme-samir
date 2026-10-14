@@ -14,7 +14,6 @@ spec:
       labels:
         app: devops-app
     spec:
-      # l'app Node ne gère pas SIGTERM : sans ça, chaque arrêt de pod attend 30 s
       terminationGracePeriodSeconds: 5
       containers:
         - name: app
