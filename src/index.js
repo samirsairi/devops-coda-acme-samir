@@ -1,4 +1,5 @@
 const http = require("http");
+const os = require("os");
 const { add } = require("./math");
 
 const durationBuckets = [0.05, 0.1, 0.2, 0.5, 1, 2];
@@ -109,6 +110,15 @@ const server = http.createServer((req, res) => {
       return;
     }
 
+    if (path === "/version") {
+      writeJson(res, 200, {
+        version: "1.1.0",
+        nodeVersion: process.version,
+        hostname: os.hostname(),
+        environment: process.env.APP_ENV || "unknown"
+      });
+      return;
+    }
     if (path === "/health") {
       writeJson(res, 200, { status: "healthy" });
       return;
