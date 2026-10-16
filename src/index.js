@@ -144,15 +144,6 @@ const server = http.createServer((req, res) => {
       return;
     }
 
-<<<<<<< HEAD
-    if (path === "/uptime") {
-      writeJson(res, 200, {
-        uptime: process.uptime()
-      });
-      return;
-    }
-
-=======
 >>>>>>> 0d35104 (feat: add uptime endpoint)
     statusCode = 404;
     writeJson(res, statusCode, { error: "Not found" });
