@@ -119,6 +119,13 @@ const server = http.createServer((req, res) => {
       });
       return;
     }
+    if (path === "/ready") {
+      writeJson(res, 200, {
+        ready: true
+      });
+      return;
+    }
+
     if (path === "/health") {
       writeJson(res, 200, { status: "healthy" });
       return;
@@ -136,6 +143,7 @@ const server = http.createServer((req, res) => {
       return;
     }
 
+<<<<<<< HEAD
     if (path === "/uptime") {
       writeJson(res, 200, {
         uptime: process.uptime()
@@ -143,6 +151,8 @@ const server = http.createServer((req, res) => {
       return;
     }
 
+=======
+>>>>>>> 0d35104 (feat: add uptime endpoint)
     statusCode = 404;
     writeJson(res, statusCode, { error: "Not found" });
   } catch (error) {
