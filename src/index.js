@@ -144,7 +144,6 @@ const server = http.createServer((req, res) => {
       return;
     }
 
->>>>>>> 0d35104 (feat: add uptime endpoint)
     statusCode = 404;
     writeJson(res, statusCode, { error: "Not found" });
   } catch (error) {
